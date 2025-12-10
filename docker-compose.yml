@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  # This is the name of our service
+  mongodb:
+    image: mongo:latest
+    container_name: chatapp_db
+    restart: always
+    ports:
+      - "27017:27017"
+    environment:
+      # Optional: Set a username/password if you want security later
+      # MONGO_INITDB_ROOT_USERNAME: root
+      # MONGO_INITDB_ROOT_PASSWORD: password
+      MONGO_INITDB_DATABASE: chatapp
+    volumes:
+      # This maps a folder inside docker to a "volume" on your PC
+      # So your data survives even if you delete the container!
+      - mongo_data:/data/db
+
+volumes:
+  mongo_data:

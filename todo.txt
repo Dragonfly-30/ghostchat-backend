@@ -1,0 +1,3 @@
+currently on `curl -v localhost:3000`(our current running port) shows this `< X-Powered-By: Express` which is a security risk, so at some point we will have to add `app.disable('x-powered-by');).` in order to make our code a little more secure.
+
+our code is currently is shown as a webpage or can say html, but chat apps dont send html, they send data(json). So we will have to add `application/json` to our routes.
