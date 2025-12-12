@@ -8,6 +8,7 @@ app.use(express.urlencoded({ extended: true, limit: "16kb" })); // Optional but 
 
 app.use('/api/user', userRouter)
 app.use('/api/messages', messageRouter)
+app.use('/api/messages', messageRouter)
 app.use('/api/user', userRouter)
 
 

@@ -27,6 +27,9 @@ const userSchema = new Schema({
     required: true,
     unique: true,
     index: true
+  },
+  refreshToken: {
+    type: String
   }
 }, { timestamps: true })
 
@@ -46,4 +49,4 @@ userSchema.pre('save', async function(next) {
 
 const User = mongoose.model('User', userSchema)
 
-export {User}
+export { User }
