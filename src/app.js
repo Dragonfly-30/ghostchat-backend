@@ -1,7 +1,14 @@
 import express from 'express'
+import cors from 'cors'
 import userRouter from './routes/user.routes.js';
 import messageRouter from './routes/message.routes.js'
 const app = express();
+
+
+app.use(cors({
+  origin: "http://localhost:5173", // Allow your React Frontend
+  credentials: true // Allow cookies/headers if needed
+}));
 
 app.use(express.json({ limit: "16kb" }));
 app.use(express.urlencoded({ extended: true, limit: "16kb" })); // Optional but good practice
